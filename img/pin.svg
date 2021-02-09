@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="52" height="52" viewBox="0 0 52 52">
+  <defs>
+    <clipPath id="clip-pin">
+      <rect width="52" height="52"/>
+    </clipPath>
+  </defs>
+  <g id="pin" clip-path="url(#clip-pin)">
+    <g id="Rectangle_82" data-name="Rectangle 82" transform="translate(51.456 26) rotate(135)" fill="#b0c5e5" stroke="#080e32" stroke-width="1">
+      <path d="M18,0H36a0,0,0,0,1,0,0V18A18,18,0,0,1,18,36h0A18,18,0,0,1,0,18v0A18,18,0,0,1,18,0Z" stroke="none"/>
+      <path d="M18,.5H35a.5.5,0,0,1,.5.5V18A17.5,17.5,0,0,1,18,35.5h0A17.5,17.5,0,0,1,.5,18v0A17.5,17.5,0,0,1,18,.5Z" fill="none"/>
+    </g>
+    <g id="Ellipse_1" data-name="Ellipse 1" transform="translate(20 20)" fill="#fff" stroke="#070d31" stroke-width="1">
+      <circle cx="6" cy="6" r="6" stroke="none"/>
+      <circle cx="6" cy="6" r="5.5" fill="none"/>
+    </g>
+  </g>
+</svg>

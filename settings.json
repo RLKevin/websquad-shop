@@ -1,0 +1,209 @@
+{
+    "editor.fontSize": 17,
+      "workbench.startupEditor": "none",
+      "liveSassCompile.settings.showOutputWindow": false,
+      "git.enableSmartCommit": true,
+      "liveServer.settings.donotShowInfoMsg": true,
+      "window.zoomLevel": 1,
+  
+      //beautify code settings
+      "editor.tabSize": 4,
+  
+      // todotree settings
+      "todo-tree.highlights.defaultHighlight": {
+          "type": "whole-line",
+          "foreground": "black",
+          "background": "#ff8800",
+      },
+  
+      // live sass compiler settings
+      "liveSassCompile.settings.formats":[
+         {
+             "format": "expanded",
+             "extensionName": ".css",
+             "savePath": "/css"
+         },
+         {
+             "format": "compressed",
+             "extensionName": ".min.css",
+             "savePath": "/css"
+         }
+     ],
+     "liveSassCompile.settings.excludeList": [
+        "**/node_modules/**",
+        ".vscode/**"
+     ],
+     "liveSassCompile.settings.generateMap": false,
+     "liveSassCompile.settings.autoprefix": [
+         "> 5%",
+         "last 5 versions"
+      ],
+  
+      "editor.fontFamily": "DankMono-Regular, Menlo, Monaco, 'Courier New', monospace",
+      "editor.fontLigatures": true,
+      "editor.fontWeight": "500",
+      "terminal.integrated.fontWeightBold": "600",
+      "editor.mouseWheelZoom": true,
+      "highlight-matching-tag.highlightFromName": false,
+      "highlight-matching-tag.highlightFromAttributes": false,
+      "highlight-matching-tag.enabled": false,
+      "editor.minimap.renderCharacters": false,
+      "workbench.editor.tabCloseButton": "off",
+      "workbench.editor.enablePreviewFromQuickOpen": false,
+      "workbench.editor.enablePreview": true,
+      "workbench.colorCustomizations": {
+        "activityBarBadge.background": "#616161",
+        "activityBar.activeBorder": "#616161",
+        "list.activeSelectionForeground": "#616161",
+        "list.inactiveSelectionForeground": "#616161",
+        "list.highlightForeground": "#616161",
+        "scrollbarSlider.activeBackground": "#61616150",
+        "editorSuggestWidget.highlightForeground": "#616161",
+        "textLink.foreground": "#616161",
+        "progressBar.background": "#616161",
+        "pickerGroup.foreground": "#616161",
+        "tab.activeBorder": "#616161",
+        "notificationLink.foreground": "#616161",
+        "editorWidget.resizeBorder": "#616161",
+        "editorWidget.border": "#616161",
+        "settings.modifiedItemIndicator": "#616161",
+        "settings.headerForeground": "#616161",
+        "panelTitle.activeBorder": "#616161",
+        "breadcrumb.activeSelectionForeground": "#616161",
+        "menu.selectionForeground": "#616161",
+        "menubar.selectionForeground": "#616161",
+        "editor.findMatchBorder": "#616161",
+        "selection.background": "#61616140"
+      },
+      "todo-tree.tree.showScanModeButton": false,
+      "editor.renderWhitespace": "none",
+      "breadcrumbs.enabled": false,
+      "workbench.editor.tabSizing": "shrink",
+  
+  
+      // italics
+  
+      "editor.tokenColorCustomizations": {
+          "[Nord]": {
+            "textMateRules": [
+              {
+                "scope": "emphasis",
+                "settings": {
+                  "fontStyle": "italic"
+                }
+              },
+              {
+                "scope": "strong",
+                "settings": {
+                  "fontStyle": "bold"
+                }
+              },
+              {
+                "scope": "entity.other.attribute-name",
+                "settings": {
+                  "fontStyle": "italic"
+                }
+              },
+              {
+                "scope": "markup.underline",
+                "settings": {
+                  "fontStyle": "underline"
+                }
+              },
+              {
+                "scope": "markup.bold",
+                "settings": {
+                  "fontStyle": "bold"
+                }
+              },
+              {
+                "scope": "markup.heading",
+                "settings": {
+                  "fontStyle": "bold"
+                }
+              },
+              {
+                "scope": "markup.italic",
+                "settings": {
+                  "fontStyle": "italic"
+                }
+              },
+              {
+                "scope": "storage.type",
+                "settings": {
+                  "fontStyle": "italic"
+                }
+              },
+              {
+                "scope": "storage.modifier",
+                "settings": {
+                  "fontStyle": "italic"
+                }
+              },
+              {
+                "name": "String interpolation",
+                "scope": [
+                  "punctuation.definition.template-expression.begin",
+                  "punctuation.definition.template-expression.end",
+                  "punctuation.section.embedded"
+                ],
+                "settings": {
+                  "fontStyle": "italic"
+                }
+              },
+              {
+                "scope": "keyword.control",
+                "settings": {
+                  "fontStyle": "italic"
+                }
+              },
+              {
+                "scope": [
+                  "keyword.operator.new",
+                  "keyword.operator.expression",
+                  "keyword.operator.cast",
+                  "keyword.operator.sizeof",
+                  "keyword.operator.logical.python"
+                ],
+                "settings": {
+                  "fontStyle": "italic"
+                }
+              },
+              {
+                "name": "this.self",
+                "scope": "variable.language",
+                "settings": {
+                  "fontStyle": "italic",
+                  "foreground": "#ff5874"
+                }
+              },
+              {
+                "name": "@Decorator",
+                "scope": ["meta.decorator punctuation.decorator"],
+                "settings": {
+                  "fontStyle": "italic"
+                }
+              },
+              {
+                "scope": ["punctuation.definition.comment", "comment"],
+                "settings": {
+                  // "foreground": "#ff5874",
+                  "fontStyle": "italic"
+                }
+              }
+            ]
+          },
+      },
+      "workbench.preferredDarkColorTheme": "Horizon",
+      "window.autoDetectColorScheme": true,
+      "workbench.preferredLightColorTheme": "Horizon Bright",
+      "workbench.activityBar.visible": true,
+      "editor.minimap.enabled": false,
+      "editor.suggestSelection": "first",
+      "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+      "workbench.colorTheme": "Horizon Italic",
+      "materialTheme.accent": "Graphite",
+      "explorer.confirmDragAndDrop": false,
+      "files.autoSave": "onFocusChange",
+      "extensions.autoUpdate": true
+  }

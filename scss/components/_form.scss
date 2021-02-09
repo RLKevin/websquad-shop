@@ -1,0 +1,143 @@
+div.form div.gform_wrapper {
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		margin-top: -40px;
+	}
+
+	li {
+		margin: 10px 0 0 0 !important;
+		padding: 0 !important;
+		max-width: 100% !important;
+		min-width: 100% !important;
+
+		.ginput_container {
+			width: 100% !important;
+			margin: 0 !important;
+		}
+
+		input,
+		textarea,
+		select {
+			box-shadow: none;
+			border: none;
+			// border-radius: 4px;
+			margin: 0 auto !important;
+			outline: none;
+			background-color: $cl-white;
+			width: 100% !important;
+			border-bottom: solid 2px $cl-grey;
+		}
+
+		select {
+			padding: 16px;
+		}
+
+		.ginput_container_select {
+			position: relative;
+
+			&::after {
+				content: "";
+				position: absolute;
+				z-index: 22;
+				height: 24px;
+				width: 24px;
+				top: 16px;
+				right: 16px;
+				background: url("img/icons/dropdown.svg");
+				background-size: contain;
+				background-position: center;
+				background-repeat: no-repeat;
+				pointer-events: none;
+			}
+		}
+
+		.gfield_time_hour {
+			input {
+				min-width: 25px;
+				width: 25px;
+			}
+
+			.gfield_time_minute {
+				margin-left: 20px !important;
+			}
+
+			i {
+				display: none;
+			}
+		}
+
+		&.half {
+			@include tablet {
+				max-width: calc(50% - 20px) !important;
+				min-width: calc(50% - 20px) !important;
+			}
+		}
+	}
+}
+
+// accept terms
+.gform_wrapper ul.gfield_checkbox li {
+	input[type="checkbox"] {
+		min-width: 0px !important;
+		width: 40px !important;
+		max-width: 40px !important;
+	}
+	label {
+		min-width: 0px !important;
+		max-width: calc(100% - 60px) !important;
+		margin-left: 20px !important;
+	}
+}
+
+// gravity form validation
+div.form div.gform_wrapper.gform_validation_error {
+	// main error message
+	div.validation_error {
+		border: none;
+		padding: 0;
+	}
+	li {
+		.ginput_container {
+			position: relative;
+
+			&::after {
+				content: "";
+				position: absolute;
+				top: calc(57px / 2);
+				transform: translateY(-50%);
+				right: 24px;
+				height: 20px;
+				width: 20px;
+				z-index: 20;
+				background-image: url("img/icons/form/check-circle.svg");
+				background-position: center;
+				background-size: contain;
+				background-repeat: no-repeat;
+				// opacity: 0.5;
+			}
+		}
+
+		&.gfield_error {
+			background-color: transparent;
+			border: none;
+			position: relative;
+
+			.ginput_container {
+				position: relative;
+
+				&::after {
+					background-image: url("img/icons/form/alert-circle.svg");
+				}
+			}
+
+			div.validation_message {
+				position: absolute;
+				top: 100%;
+				left: 0;
+				padding: 0 0 0 0 !important;
+			}
+		}
+	}
+}

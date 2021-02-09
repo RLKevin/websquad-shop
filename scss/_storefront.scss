@@ -1,0 +1,117 @@
+// layout
+
+// reset full with padding
+
+.custom ~ div.site-content > .col-full {
+	max-width: none;
+	padding: 0;
+	margin: 0;
+}
+
+div.site-content > .col-full {
+	max-width: 1600px;
+}
+
+// breadcrubs
+
+div.storefront-breadcrumb {
+	margin-bottom: 20px;
+}
+
+// do not display breadcrumbs on custom page
+.custom ~ div.storefront-breadcrumb {
+	display: none;
+}
+
+// producten sorteren
+
+div.storefront-sorting {
+	form.woocommerce-ordering {
+		position: relative;
+		select {
+			background-color: $cl-grey;
+			padding: 0.5em 1em 0.5em 3em;
+		}
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			height: 1em;
+			width: 1em;
+			left: 1em;
+			background-image: url("img/icons/sort.svg");
+			background-size: contain;
+			background-position: center;
+			background-repeat: no-repeat;
+		}
+	}
+
+	p.woocommerce-result-count {
+		width: auto;
+		margin-right: auto;
+	}
+}
+
+// active filters
+.widget.woocommerce.widget_layered_nav_filters {
+	li.chosen {
+		position: relative;
+
+		&::before {
+			position: absolute;
+			left: 1.618em;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+	}
+}
+
+// select input
+
+table.variations {
+	select {
+		position: relative;
+		background-color: $cl-grey;
+		border-radius: 4px;
+		padding: 6px 12px 6px 12px;
+	}
+}
+
+// price
+
+// sale price red
+span.price,
+p.price {
+	del {
+		color: $cl-error;
+	}
+}
+
+// woocommerce message
+div.woocommerce-message {
+	&[role="alert"] {
+		background-color: $cl-primary;
+	}
+}
+
+// filters
+
+// price slider
+.ui-slider-range,
+.ui-slider-handle {
+	background-color: $cl-primary !important;
+}
+
+// page title margin
+
+.woocommerce-products-header__title.page-title {
+	margin-bottom: 40px;
+}
+
+// Gutenberg blocks
+
+.wp-block-columns {
+	@include auto-padding-all;
+}

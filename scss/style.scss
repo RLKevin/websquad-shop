@@ -1,0 +1,576 @@
+//  websquad
+//	rendementsweg 2Q
+// 	3641 SK mijdrecht
+//	0297 - 525580
+
+// variable
+
+// variable - color
+
+$cl-black: #030405;
+$cl-white: #ffffff;
+$cl-grey: #efefef;
+$cl-primary: #5f207a;
+$cl-secondary: #c6006d;
+$cl-error: #c6006d;
+
+// variable - font-size
+
+$fs-tiny: 12px;
+$fs-small: 16px;
+$fs-medium: 24px;
+$fs-large: 32px;
+$fs-huge: 48px;
+
+// variable - line-height
+
+$lh-small: 1.2;
+$lh-medium: 1.6;
+$lh-large: 2;
+
+// variable - font-weight
+
+$fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 700;
+$fw-bold: 900;
+
+// variable - font-family
+
+$ff-primary: "Lato", sans-serif;
+$ff-secondary: "lexia", serif;
+
+// variable - mediaquerie
+
+@mixin tablet {
+	@media only screen and (min-width: 640px) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media only screen and (min-width: 1280px) {
+		@content;
+	}
+}
+
+@mixin custom($size) {
+	@media only screen and (min-width: $size) {
+		@content;
+	}
+}
+
+// variable - template
+
+@mixin shape {
+	border-radius: 8px 0px;
+}
+
+@mixin auto-padding {
+	padding-left: 20px;
+	padding-right: 20px;
+
+	@include tablet {
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+
+	@include desktop {
+		padding-left: 80px;
+		padding-right: 80px;
+	}
+}
+@mixin auto-padding-all {
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+
+	@include tablet {
+		padding-left: 40px;
+		padding-right: 40px;
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+
+	@include desktop {
+		padding-left: 80px;
+		padding-right: 80px;
+		padding-top: 80px;
+		padding-bottom: 80px;
+	}
+}
+
+@mixin point-hero {
+	position: relative;
+	overflow: hidden;
+	margin-bottom: -24px;
+
+	&:before,
+	&:after {
+		content: "";
+		position: absolute;
+		bottom: -24px;
+		left: 0;
+		width: calc(50% + 8px);
+		height: 96px;
+		border-radius: 0 288px 0 0 / 0 96px 0 0;
+		background: $cl-white;
+		z-index: 1;
+	}
+
+	&:after {
+		left: auto;
+		right: 0;
+		border-radius: 288px 0 0 0 / 96px 0 0 0;
+	}
+}
+
+@mixin point-intro {
+	padding: 96px 0 144px 0;
+	margin: -96px 0 48px 0;
+	position: relative;
+
+	&:before,
+	&:after {
+		content: "";
+		position: absolute;
+		bottom: 0px;
+		left: 0;
+		width: calc(50% + 8px);
+		height: 96px;
+		border-radius: 0 288px 0 0 / 0 96px 0 0;
+		background: $cl-white;
+	}
+
+	&:after {
+		left: auto;
+		right: 0;
+		border-radius: 288px 0 0 0 / 96px 0 0 0;
+	}
+}
+
+@mixin point-content {
+	position: relative;
+	padding-top: 48px;
+	border-top: 96px solid $cl-white;
+
+	&:before,
+	&:after {
+		content: "";
+		position: absolute;
+		top: -96px;
+		left: 0;
+		width: calc(50% + 8px);
+		height: 96px;
+		border-radius: 0 288px 0 0 / 0 96px 0 0;
+		background: $cl-white;
+	}
+
+	&:after {
+		left: auto;
+		right: 0;
+		border-radius: 288px 0 0 0 / 96px 0 0 0;
+	}
+}
+
+@mixin point-button {
+	@include tablet {
+		&:before,
+		&:after {
+			content: "";
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 48px;
+			height: calc(50% + 8px);
+			border-radius: 0 4px 0 48px / 0 4px 0 48px;
+			background: linear-gradient(
+				to right,
+				$cl-primary 0%,
+				$cl-secondary 100%
+			);
+			background-size: 96px;
+			background-position: center left;
+			background-position-x: -100%;
+			background-repeat: no-repeat;
+			transition: 0.25s all ease-in-out;
+		}
+
+		&:after {
+			top: auto;
+			bottom: 0;
+			border-radius: 48px 0 4px 0 / 48px 0 4px 0;
+		}
+	}
+}
+
+@mixin point-footer {
+	position: relative;
+	// padding-top: 48px;
+	border-top: 96px solid $cl-black;
+
+	&:before,
+	&:after {
+		content: "";
+		position: absolute;
+		top: -96px;
+		left: 0;
+		width: calc(50% + 8px);
+		height: 96px;
+		border-radius: 0 288px 0 0 / 0 96px 0 0;
+		background: $cl-secondary;
+	}
+
+	&:after {
+		left: auto;
+		right: 0;
+		border-radius: 288px 0 0 0 / 96px 0 0 0;
+	}
+}
+
+// variable - keyframes
+
+@keyframes rotate {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	30% {
+		transform: rotate(-10deg);
+	}
+
+	70% {
+		transform: rotate(10deg);
+	}
+
+	100% {
+		transform: rotate(0deg);
+	}
+}
+
+@keyframes fly-in {
+	0% {
+		transform: translate(0, 50vw);
+		opacity: 0;
+	}
+	100% {
+		transform: translate(0, 0);
+		opacity: 1;
+	}
+}
+
+@keyframes pulsePause {
+	0% {
+		transform: scale3d(1, 1, 1);
+	}
+	6% {
+		transform: scale3d(1.25, 1.25, 1.25);
+	}
+	12% {
+		transform: scale3d(1, 1, 1);
+	}
+	18% {
+		transform: scale3d(1.25, 1.25, 1.25);
+	}
+	24% {
+		transform: scale3d(1, 1, 1);
+	}
+	100% {
+		transform: scale3d(1, 1, 1);
+	}
+}
+
+// imports
+
+// assets
+
+@import "assets/reset.scss";
+@import "assets/owl-carousel";
+@import "assets/animations";
+
+// elements
+
+@import "components/button.scss";
+@import "components/cookie.scss";
+@import "components/form.scss";
+@import "components/slider.scss";
+
+// body
+
+html {
+	background: $cl-primary;
+}
+
+html,
+body {
+	width: 100%;
+	overflow-x: hidden;
+}
+
+body {
+	font-family: $ff-primary;
+	font-size: $fs-small;
+	line-height: $lh-large;
+	font-weight: $fw-regular;
+	color: $cl-black;
+	letter-spacing: 0.6px;
+	background: $cl-white;
+}
+
+input,
+textarea,
+select {
+	font-family: $ff-primary;
+	font-size: $fs-small;
+	line-height: $lh-large;
+	font-weight: $fw-regular;
+	color: $cl-black;
+	letter-spacing: 0.6px;
+	background: $cl-white;
+}
+
+// grid
+
+.wrapper {
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 16px;
+
+	@include tablet {
+		padding: 0 48px;
+	}
+
+	@include desktop {
+		padding: 0 96px;
+	}
+}
+
+// content
+
+// titles
+
+h1,
+h2 {
+	color: $cl-black;
+	font-size: $fs-medium;
+	line-height: $lh-small;
+	font-family: $ff-secondary;
+	font-weight: $fw-bold;
+	padding: 0 0 48px 0;
+	letter-spacing: 2px;
+
+	@include tablet {
+		font-size: $fs-large;
+	}
+}
+
+h3 {
+	color: $cl-secondary;
+	font-size: $fs-small;
+	line-height: $lh-medium;
+	font-family: $ff-secondary;
+	font-weight: $fw-medium;
+	padding: 0 0 48px 0;
+	position: relative;
+	z-index: 1;
+
+	@include tablet {
+		font-size: $fs-medium;
+	}
+}
+
+// paragraph
+
+p {
+	padding: 0 0 48px 0;
+
+	&.dotdotdot {
+		opacity: 0;
+		transition: all 0.25s ease-in-out;
+
+		&.loaded {
+			opacity: 1;
+		}
+	}
+
+	a {
+		&,
+		&:visited,
+		&:active,
+		&:focus {
+			color: $cl-secondary;
+			transition: all 0.25s ease-in-out;
+		}
+
+		&:hover {
+			color: darken($cl-secondary, 10%);
+		}
+	}
+}
+
+// quote
+
+blockquote {
+	position: relative;
+	color: $cl-primary;
+	font-style: italic;
+	border-left: 2px solid $cl-secondary;
+	margin: 0 0 48px 0;
+	padding: 48px 0 0 16px;
+
+	p {
+		position: relative;
+	}
+
+	@include tablet {
+		padding: 48px 0 0 48px;
+	}
+
+	@include desktop {
+		padding: 48px 0 0 96px;
+	}
+
+	&:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 128px;
+		height: 128px;
+		background-image: url(../img/icons/quote-right-solid-secondary.svg);
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+		background-position: center;
+		pointer-events: none;
+		opacity: 0.16;
+	}
+}
+
+// image
+
+img {
+	width: 100%;
+	height: auto;
+}
+
+// strong
+
+strong {
+	font-weight: $fw-bold;
+	color: $cl-primary;
+}
+
+// italic
+
+em {
+	color: darken($cl-grey, 50%);
+}
+
+// linebreak
+
+br {
+	// @include media-querie-m {
+	// 	display: none;
+	// }
+}
+
+// wysiwyg
+
+.wysiwyg {
+	ul {
+		padding: 0 0 48px 0;
+
+		li {
+			padding: 0 0 4px 24px;
+			position: relative;
+
+			&:last-of-type {
+				padding: 0 0 0 24px;
+			}
+
+			&:before {
+				content: "\25E6";
+				position: absolute;
+				left: 0;
+				font-weight: $fw-bold;
+				color: $cl-secondary;
+			}
+
+			a {
+				&,
+				&:visited,
+				&:active,
+				&:focus {
+					color: $cl-secondary;
+					transition: all 0.25s ease-in-out;
+				}
+
+				&:hover {
+					color: darken($cl-secondary, 10%);
+				}
+			}
+		}
+	}
+}
+
+// loading
+
+.loading {
+	opacity: 0;
+	transition: all 0.25s ease-in-out;
+
+	&.page-loaded {
+		opacity: 1;
+	}
+}
+
+// placeholder
+
+::placeholder {
+	color: darken($cl-grey, 20%);
+	opacity: 1;
+	// text-transform: uppercase;
+}
+
+// selection
+
+::selection {
+	background: darken($cl-grey, 10%);
+	text-shadow: none;
+}
+
+// autofill
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+	transition: background-color 5000s ease-in-out 0s;
+}
+
+// import - overrides woocommerce theme
+@import "storefront";
+
+// imports - general
+
+@import "header";
+@import "menu";
+@import "footer";
+
+// imports - blocks
+
+@import "blocks/card";
+@import "blocks/content";
+@import "blocks/faq";
+@import "blocks/form";
+@import "blocks/gallery";
+@import "blocks/hero";
+@import "blocks/intro";
+@import "blocks/map";
+@import "blocks/open";
+@import "blocks/reference";
+// @import "blocks/search";
+@import "blocks/spacer";
+@import "blocks/table";
+@import "blocks/usp";

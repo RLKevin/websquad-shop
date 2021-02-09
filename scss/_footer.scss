@@ -1,0 +1,197 @@
+footer {
+	padding: 80px;
+	@include auto-padding;
+	background-color: $cl-black;
+
+	background-image: url("img/s10.png");
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	.wrapper {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		.column {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+			& + .column {
+				margin-top: 40px;
+			}
+
+			@include desktop {
+				width: calc(100% / 3);
+				align-items: initial;
+				margin-top: 0;
+			}
+
+			&.contact {
+				@include desktop {
+					order: 1;
+				}
+				img {
+					width: 40px;
+					display: none;
+					@include desktop {
+						display: block;
+					}
+				}
+
+				.row {
+					width: 400px;
+					max-width: 100%;
+					display: flex;
+					flex-direction: column;
+					@include desktop {
+						flex-direction: row;
+					}
+
+					div {
+						width: 100%;
+						margin-top: 20px;
+						@include desktop {
+							padding-right: 20px;
+						}
+
+						p,
+						a {
+							display: block;
+							text-align: center;
+							margin-bottom: 0;
+
+							@include desktop {
+								text-align: left;
+							}
+						}
+					}
+				}
+			}
+
+			&.logo {
+				justify-content: center;
+				align-items: center;
+
+				@include desktop {
+					order: 2;
+				}
+
+				.logo {
+					width: 200px;
+					max-width: 100%;
+					height: auto;
+				}
+			}
+
+			&.social {
+				display: flex;
+				flex-direction: row;
+				justify-content: flex-end;
+				align-items: flex-end;
+
+				@include desktop {
+					order: 3;
+				}
+
+				p {
+					margin: 0 0 0 auto;
+					width: max-content;
+					line-height: 40px;
+				}
+
+				a {
+					display: block;
+					height: 40px;
+					width: 40px;
+					background-size: 20px;
+					background-position: center;
+					background-repeat: no-repeat;
+					margin-left: 10px;
+
+					&.facebook {
+						background-image: url("img/icons/facebook/white.svg");
+						background-size: 14px;
+					}
+					&.twitter {
+						background-image: url("img/icons/twitter/white.svg");
+					}
+					&.instagram {
+						background-image: url("img/icons/instagram/white.svg");
+					}
+					&.linkedin {
+						background-image: url("img/icons/linkedin/white.svg");
+					}
+					&.youtube {
+						background-image: url("img/icons/youtube/white.svg");
+					}
+
+					&:last-of-type {
+						margin-right: auto;
+
+						@include desktop {
+							margin-right: 0;
+						}
+					}
+				}
+			}
+
+			p,
+			a {
+				color: $cl-white;
+				font-size: $fs-tiny;
+			}
+
+			a {
+				transition: opacity 150ms ease;
+				&:hover {
+					opacity: 0.7;
+				}
+			}
+		}
+	}
+}
+
+section.privacy {
+	padding-top: 20px !important;
+	padding-bottom: 20px !important;
+	@include auto-padding;
+	background-color: $cl-primary;
+	color: $cl-white;
+
+	.wrapper {
+		display: flex;
+		flex-direction: column;
+		font-size: $fs-tiny;
+
+		@include desktop {
+			flex-direction: row;
+			justify-content: space-between;
+		}
+
+		div {
+			text-align: center;
+		}
+
+		a {
+			font-size: $fs-tiny;
+			color: currentColor;
+			font-weight: $fw-bold;
+			opacity: 1;
+			transition: opacity 150ms ease;
+
+			&:hover {
+				opacity: 0.7;
+			}
+		}
+
+		.privacy {
+			* + * {
+				margin-left: 20px;
+			}
+		}
+	}
+}

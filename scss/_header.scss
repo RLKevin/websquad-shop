@@ -1,0 +1,370 @@
+@mixin menu {
+	@media only screen and (min-width: 1280px) {
+		@content;
+	}
+}
+
+.header {
+	width: 100%;
+	height: 100px;
+	padding: 0;
+	@include auto-padding;
+	$self: &;
+	margin: auto;
+	position: fixed;
+	z-index: 300;
+	background-color: $cl-white;
+	transition: background-color 150ms ease;
+
+	.wrapper {
+		position: relative;
+		height: 100%;
+		max-width: 1600px;
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+
+		.logo {
+			position: relative;
+			height: 80px;
+			width: auto;
+			padding: 0 0;
+
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+
+			a {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: center;
+			}
+
+			img {
+				height: auto;
+				width: auto;
+				max-height: 100%;
+				max-width: 280px;
+				margin: auto 0;
+			}
+
+			span {
+				color: $cl-primary;
+				margin-left: 20px;
+			}
+		}
+
+		.contact {
+			height: 100%;
+			width: auto;
+			margin: 0 auto 0 0;
+			// margin-left: -288px;
+			display: none;
+			justify-content: center;
+			align-items: center;
+			transition: margin-left 100ms ease;
+
+			@include desktop {
+				display: flex;
+			}
+
+			a {
+				position: relative;
+				color: $cl-black;
+				font-size: 14px;
+				padding-left: 34px;
+				margin: auto 0;
+				transition: width 100ms ease;
+
+				& + a {
+					margin-left: 40px;
+				}
+
+				&::before {
+					content: "";
+					position: absolute;
+					height: 24px;
+					width: 24px;
+					background-size: contain;
+					background-position: center;
+					background-repeat: no-repeat;
+					left: 0;
+					top: 50%;
+					transform: translateY(-50%);
+				}
+
+				&:nth-of-type(1)::before {
+					background-image: url("img/icons/phone/black.svg");
+				}
+
+				&:nth-of-type(2)::before {
+					background-image: url("img/icons/mail/black.svg");
+				}
+
+				&:nth-of-type(3)::before {
+					background-image: url("img/icons/whatsapp/black.svg");
+				}
+			}
+		}
+
+		.search {
+			display: none;
+			position: relative;
+			height: 50px;
+			width: auto;
+			margin: auto 90px auto auto;
+			@include custom(700px) {
+				display: block;
+			}
+			@include desktop {
+				margin: auto 50px auto auto;
+			}
+			@include desktop {
+				margin: auto 40px auto auto;
+			}
+
+			color: $cl-primary;
+
+			form {
+				margin: 0;
+			}
+
+			&::before {
+				content: "";
+				position: absolute;
+				left: 20px;
+				width: 16px;
+				height: 16px;
+				top: 14px;
+				z-index: 20;
+				background-image: url("img/icons/search/primary.svg");
+				background-size: contain;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+
+			input[type="search"] {
+				width: 240px;
+				padding-left: 40px;
+				color: inherit;
+				box-shadow: none;
+				@include shape;
+
+				&::placeholder {
+					color: inherit;
+					font-size: $fs-small;
+					text-transform: uppercase;
+					padding-left: 10px;
+				}
+
+				&:focus {
+					outline: none;
+				}
+			}
+
+			button {
+				display: none;
+			}
+		}
+
+		.desktop-menu {
+			height: 100%;
+			width: auto;
+			margin: auto;
+			margin-right: 0;
+			display: none;
+
+			@include desktop {
+				display: flex;
+			}
+
+			ul {
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				align-items: center;
+				height: 100%;
+				margin: 0;
+
+				li {
+					position: relative;
+					width: auto;
+
+					margin-left: 40px;
+					& + li {
+					}
+
+					ul {
+						background-color: $cl-black;
+						// display: none;
+						opacity: 0;
+						pointer-events: none;
+						position: absolute;
+						top: 150%;
+						left: 50%;
+						transform: translateX(-50%);
+						height: auto;
+						width: 200px;
+						z-index: 23;
+						padding-top: 4px;
+						transition: opacity 150ms ease-out;
+
+						flex-direction: column;
+
+						// colored bar at the top
+						&::before {
+							content: "";
+							position: absolute;
+							top: 0;
+							left: 50%;
+							transform: translateX(-50%);
+							height: 4px;
+							width: 140px;
+							background-color: $cl-secondary;
+							z-index: 24;
+							pointer-events: none;
+						}
+
+						li {
+							position: relative;
+							height: auto;
+							width: 100%;
+							padding: 0;
+							margin: 0;
+							margin-left: 0 !important;
+
+							a {
+								position: relative;
+								display: block;
+								color: $cl-primary;
+								background-color: $cl-primary;
+								text-align: center !important;
+								width: 100%;
+								padding: 20px 10px;
+								line-height: 1 !important;
+								letter-spacing: 1px !important;
+							}
+						}
+					}
+
+					&:hover ul {
+						display: flex;
+						opacity: 1;
+						pointer-events: all;
+					}
+				}
+
+				a {
+					position: relative;
+					color: $cl-black;
+					font-weight: $fw-regular;
+					transition: color 250ms ease;
+					letter-spacing: 2px;
+					font-size: 14px;
+					padding: 20px 0;
+					opacity: 1;
+					line-height: 1.2;
+					transition: opacity 250ms ease;
+					text-transform: uppercase;
+
+					&:hover,
+					.active {
+						opacity: 0.6;
+					}
+				}
+
+				li.current-menu-item > a,
+				li.current-page-parent > a {
+					font-weight: $fw-bold;
+					color: $cl-primary;
+				}
+			}
+		}
+
+		a.sale {
+			position: relative;
+			margin: auto 0 auto auto;
+			color: $cl-primary;
+			font-weight: $fw-bold;
+			transition: color 150ms ease;
+
+			&::before {
+				content: "";
+				position: absolute;
+				top: -8px;
+				bottom: -8px;
+				left: -20px;
+				right: -20px;
+				background-color: transparent;
+				border-radius: 4px;
+				z-index: -1;
+				transition: background-color 150ms ease;
+			}
+
+			&:hover {
+				color: white;
+				&::before {
+					// content: '';
+					background-color: $cl-secondary;
+				}
+			}
+		}
+
+		.cart {
+			position: relative;
+			height: 100%;
+			display: none;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+
+			@include menu {
+				display: flex;
+			}
+
+			a {
+				padding-left: 34px;
+				color: $cl-primary;
+				opacity: 1;
+				transition: opacity 250ms ease;
+
+				&::before {
+					content: "";
+					position: absolute;
+					height: 24px;
+					width: 24px;
+					background-size: contain;
+					background-position: center;
+					background-repeat: no-repeat;
+					left: 0;
+					top: 50%;
+					transform: translateY(-50%);
+					background-image: url("img/icons/supermarket.svg");
+					opacity: 1;
+					transition: opacity 250ms ease;
+				}
+
+				&:hover {
+					opacity: 0.6;
+
+					&::before {
+						opacity: 0.6;
+					}
+				}
+			}
+		}
+	}
+
+	// dont overlay header on store pages
+	&:not(.custom) ~ .storefront-breadcrumb {
+		margin-top: 100px;
+	}
+
+	&.store {
+		// position: relative;
+	}
+}

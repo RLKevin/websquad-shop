@@ -1,0 +1,159 @@
+.search {
+	$self: &;
+	padding: 96px 0 48px;
+
+	.wrapper {
+		max-width: 960px;
+
+		@include desktop {
+			max-width: 1120px;
+		}
+	}
+
+	h2 {
+		span {
+			color: $cl-primary;
+		}
+	}
+
+	h3 {
+		margin-top: -40px;
+	}
+
+	a {
+		display: block;
+		margin: 0 0 2px 0;
+		background: $cl-secondary;
+		position: relative;
+		color: $cl-white;
+		font-weight: $fw-medium;
+		transition: 0.25s all ease-in-out;
+		padding: 16px 88px 16px 16px;
+		border-radius: 4px;
+		z-index: 1;
+		background: linear-gradient(
+			to right,
+			$cl-secondary 0%,
+			$cl-primary 100%
+		);
+		background-position: center left;
+		background-size: 100%;
+		text-align: left;
+
+		@include tablet {
+			padding: 16px 88px 16px 24px;
+		}
+
+		&:last-of-type {
+			margin: 0 0 48px 0;
+		}
+
+		&:after {
+			content: "";
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 64px;
+			height: 64px;
+			background-image: url(../img/icons/arrow-to-bottom-regular-white.svg);
+			background-size: 20px 20px;
+			background-repeat: no-repeat;
+			background-position: center;
+			pointer-events: none;
+		}
+
+		&:hover {
+			cursor: pointer;
+			background-size: 150%;
+			background-position: center left;
+
+			&::after {
+				animation: rotate 0.5s 1;
+			}
+		}
+	}
+
+	// background
+
+	&--white {
+		background: $cl-white;
+
+		#{$self}__result {
+			line-height: 56px;
+			border: 2px solid lighten($cl-grey, 20%);
+
+			&::before {
+				top: -2px;
+				right: -2px;
+				width: 60px;
+				border: 2px solid lighten($cl-grey, 20%);
+			}
+
+			&::after {
+				top: -2px;
+				right: -2px;
+				width: 60px;
+			}
+		}
+	}
+
+	&--grey {
+		background: $cl-grey;
+
+		// @include point-content;
+
+		&:before,
+		&:after {
+			background: $cl-grey;
+		}
+	}
+
+	&--black {
+		background: $cl-black;
+
+		h2,
+		p {
+			color: $cl-white;
+		}
+	}
+
+	&--primary {
+		background: $cl-primary;
+
+		h2,
+		p {
+			color: $cl-white;
+		}
+	}
+
+	&--secondary {
+		background: $cl-secondary;
+
+		h2,
+		p {
+			color: $cl-white;
+		}
+
+		strong {
+			color: $cl-primary;
+		}
+
+		a {
+			background: $cl-primary;
+
+			&:hover {
+				background: darken($cl-primary, 10%);
+			}
+		}
+	}
+
+	// align
+
+	&--left {
+		text-align: left;
+	}
+
+	&--center {
+		text-align: center;
+	}
+}

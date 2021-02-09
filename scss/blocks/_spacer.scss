@@ -1,0 +1,33 @@
+.spacer {
+	// background
+
+	&--white {
+		background: $cl-white;
+	}
+
+	&--grey {
+		background: $cl-grey;
+	}
+
+	&--black {
+		background: $cl-black;
+	}
+
+	&--primary {
+		background: $cl-primary;
+	}
+
+	&--secondary {
+		background: $cl-secondary;
+	}
+
+	// margin
+
+	&--positive {
+		height: 96px;
+	}
+
+	&--negative {
+		margin-top: -96px;
+	}
+}

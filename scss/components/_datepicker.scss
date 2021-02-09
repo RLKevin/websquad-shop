@@ -1,0 +1,39 @@
+// styles for jquery datepicker used in Gravity Forms date fields
+
+div.ui-datepicker {
+	@include shape;
+	overflow: hidden;
+
+	.ui-datepicker-header {
+		background-color: $cl-primary;
+	}
+
+	table.ui-datepicker-calendar {
+		thead {
+			background-color: $cl-white;
+			border-bottom: $cl-secondary 2px solid;
+		}
+
+		tbody {
+			background-color: $cl-white;
+
+			tr {
+				background-color: $cl-white;
+				td {
+					// border: 0px !important;
+
+					a {
+						color: $cl-black;
+						background-color: $cl-white;
+						background-image: none;
+						transition: all 150ms ease;
+					}
+					&::hover {
+						background-color: $cl-secondary;
+						color: $cl-white;
+					}
+				}
+			}
+		}
+	}
+}

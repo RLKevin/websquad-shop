@@ -1,0 +1,122 @@
+.intro {
+	$self: &;
+	padding: 96px 0 48px 0;
+
+	.wrapper {
+		max-width: 960px;
+
+		@include desktop {
+			max-width: 1120px;
+		}
+	}
+
+	&__title {
+		position: relative;
+		z-index: 1;
+
+		h1 {
+			text-align: center;
+			width: 100%;
+			position: relative;
+		}
+
+		&--grey {
+			background: $cl-grey;
+
+			// @include point-intro;
+		}
+
+		&--black {
+			background: $cl-black;
+
+			// @include point-intro;
+
+			h1 {
+				color: $cl-white;
+			}
+		}
+
+		&--primary {
+			background: linear-gradient(
+				to top right,
+				$cl-secondary 0%,
+				$cl-primary 100%
+			);
+
+			// @include point-intro;
+
+			h1 {
+				color: $cl-white;
+			}
+		}
+
+		&--secondary {
+			background: linear-gradient(
+				to top right,
+				$cl-primary 0%,
+				$cl-secondary 100%
+			);
+
+			// @include point-intro;
+
+			h1 {
+				color: $cl-white;
+			}
+
+			h1 {
+				color: $cl-white;
+			}
+		}
+
+		&--image {
+			position: relative;
+			background-position: center center;
+			background-size: cover;
+
+			// @include point-intro;
+
+			h1 {
+				color: $cl-white;
+				position: initial;
+				z-index: 1;
+
+				&:before {
+					content: "";
+					position: absolute;
+					top: 0;
+					right: 0;
+					bottom: 0;
+					left: 0;
+					background: linear-gradient(
+						to bottom right,
+						rgba($cl-black, 0.16) 0%,
+						rgba($cl-black, 0.32) 50%,
+						rgba($cl-black, 0.16) 100%
+					);
+					z-index: -1;
+				}
+			}
+		}
+	}
+
+	&__text {
+		text-align: center;
+		font-weight: $fw-medium;
+
+		p {
+			@include desktop {
+				font-size: calc(#{$fs-small} * 1.2);
+			}
+		}
+
+		#{$self}__button-container {
+			a {
+				margin: 0 24px 24px 24px;
+
+				&:last-of-type {
+					margin: 0 24px 48px 24px;
+				}
+			}
+		}
+	}
+}
