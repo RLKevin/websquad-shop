@@ -46,6 +46,10 @@
 			position: relative;
 			padding: 0 !important;
 
+			span {
+				display: none;
+			}
+
 			&:before {
 				content: "";
 				position: absolute;
@@ -58,7 +62,7 @@
 				background-size: 16px 16px;
 				background-repeat: no-repeat;
 				background-position: center;
-				background-image: url(img/icons/arrow-left-regular-white.svg);
+				background-image: url("../img/icons/arrow-left-regular-white.svg");
 				transition: 0.25s background-image ease-in-out,
 					0.25s border ease-in-out;
 			}
@@ -71,7 +75,7 @@
 
 		.owl-next {
 			&:before {
-				background-image: url(img/icons/arrow-right-regular-white.svg);
+				background-image: url("../img/icons/arrow-right-regular-white.svg");
 			}
 		}
 	}
