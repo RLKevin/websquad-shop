@@ -2,9 +2,10 @@
 Een child thema voor het Storefront thema voor Woocommerce, gemaakt door Switch Reclamebureau voor WebSquad.
 
 ## Instructies
-- Installeer Wordpress
-- Installeer Woocommerce
+- Installeer en configureer Wordpress
+- Installeer en activeer Woocommerce
 - Installeer het Storefront thema
+- Installeer en activeer Advaced Custom Fields Pro
 - Importeer ACF velden
 - Installeer en activeer dit WebSquad thema ```git clone git@github.com:RLKevin/websquad-webshop.git```
 
@@ -15,4 +16,5 @@ Een child thema voor het Storefront thema voor Woocommerce, gemaakt door Switch 
   - [x] Variabelen
   - [ ] Fonts
 - [ ] Websquad blokken een preview afbeelding geven
-- [ ] options pagina opschonen
+- [ ] Options pagina opschonen
+- [ ] Dynamisch shoppingcart icoon in header
