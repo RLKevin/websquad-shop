@@ -1,4 +1,14 @@
 {
+	"workbench.colorCustomizations": {
+		// "activityBar.background": "#fff",
+		// "activityBar.foreground": "#5f207a",
+		// "activityBar.inactiveForeground": "#cdcdcd",
+		"titleBar.activeBackground": "#5f207a",
+		"titleBar.activeForeground": "#ffffff",
+		"statusBar.background": "#c6006d",
+		"statusBar.foreground": "#ffffff"
+	},
+
 	// live sass compiler settings
 	"liveSassCompile.settings.formats": [
 		{
