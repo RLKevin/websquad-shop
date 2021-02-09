@@ -14,3 +14,5 @@ Een child thema voor het Storefront thema voor Woocommerce, gemaakt door Switch 
 - [ ] Variabelen ophalen uit ACF en inladen in de stylesheet
  - [x] Variabelen
  - [ ] Fonts
+- [ ] Websquad blokken een preview afbeelding geven
+- [ ] options pagina opschonen
