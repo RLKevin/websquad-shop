@@ -11,15 +11,13 @@
 	font-size: $fs-small;
 	font-weight: $fw-medium;
 	line-height: $lh-large;
-	border-radius: 4px;
+	@include shape;
 	z-index: 1;
 	text-align: center;
 
 	@include tablet {
 		padding: 16px 40px;
 	}
-
-	@include point-button;
 
 	&:hover {
 		cursor: pointer;

@@ -2,6 +2,15 @@
 
     include 'woo.php';
 
+    function generate_options_css() {
+        $ss_dir = get_stylesheet_directory();
+        ob_start(); // Capture all output into buffer
+        require($ss_dir . '/custom-styles.php'); // Grab the custom-style.php file
+        $css = ob_get_clean(); // Store output in a variable, then flush the buffer
+        file_put_contents($ss_dir . '/scss/_custom.scss', $css, LOCK_EX); // Save it as a css file
+    }
+    add_action( 'acf/save_post', 'generate_options_css', 20 ); //Parse the output and write the CSS file on post save
+
 /**
  * Storefront automatically loads the core CSS even if using a child theme as it is more efficient
  * than @importing it in the child theme style.css file.
