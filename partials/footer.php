@@ -2,8 +2,6 @@
 
 // vars
 
-echo get_field('color_primary', 'option');
-
 $image = get_field('options_logo_alt', 'option');
 $facebook = get_field('options_facebook_link', 'option');
 $twitter = get_field('options_twitter_link', 'option');
