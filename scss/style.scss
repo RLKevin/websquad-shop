@@ -14,6 +14,13 @@ $cl-primary: #5f207a;
 $cl-secondary: #c6006d;
 $cl-error: #c6006d;
 
+// variable - font family
+
+$ff-primary: "Lato", sans-serif;
+$ff-secondary: "lexia", serif;
+
+// variable - custom acf variables
+
 @import 'custom';
 
 // variable - font-size
@@ -36,11 +43,6 @@ $fw-light: 300;
 $fw-regular: 400;
 $fw-medium: 700;
 $fw-bold: 900;
-
-// variable - font-family
-
-$ff-primary: "Lato", sans-serif;
-$ff-secondary: "lexia", serif;
 
 // variable - mediaquerie
 

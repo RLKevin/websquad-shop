@@ -7,6 +7,19 @@
  * @package storefront
  */
 
+//  initialize fonts
+$primary_font = get_field('font_primary', 'options');
+if (!$primary_font) {
+    $primary_font = 'Roboto';
+}
+$secondary_font = get_field('font_secondary', 'options');
+if (!$secondary_font) {
+    $secondary_font = 'Roboto Slab';
+}
+
+$primary_font = str_replace(' ', '+', $primary_font);
+$secondary_font = str_replace(' ', '+', $secondary_font);
+
 ?><!doctype html>
 <html <?php language_attributes(); ?>>
     <head>
@@ -14,9 +27,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2.0">
         <link rel="profile" href="http://gmpg.org/xfn/11">
         <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-        <!-- <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet"> -->
-        <meta name="theme-color" content="#A8C6E7">
+        <link href="https://fonts.googleapis.com/css2?family=<?= $primary_font; ?>:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=<?= $secondary_font; ?>:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+        <meta name="theme-color" content="<?= get_field('color_tab','option'); ?>">
         <?php wp_head(); ?>
 
         <script type="text/javascript">

@@ -180,7 +180,7 @@
 				justify-content: center;
 
 				img {
-					border-radius: 4px;
+					@include shape;
 				}
 			}
 		}

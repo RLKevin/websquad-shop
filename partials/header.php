@@ -65,22 +65,12 @@
 			?>
 			<a class="logo__image" href="<?php echo home_url(); ?>">
 				<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>">
-				<span>Webshop</span>
+				<!-- <span>Webshop</span> -->
 			</a>
 		</div>
 
 		<!-- <div class="search">
 			<?php get_product_search_form(); ?>
-		</div> -->
-
-		<!-- <div class="cart">
-			<?php global $woocommerce; ?>
-			<a href="<?php echo wc_get_cart_url(); ?>"
-				title="<?php _e('Cart View', 'woothemes'); ?>">
-				<?php echo sprintf(_n('%d product', '%d producten', $woocommerce->cart->cart_contents_count, 'woothemes'),
-		$woocommerce->cart->cart_contents_count);?> -
-				<?php echo $woocommerce->cart->get_cart_total(); ?>
-
 		</div> -->
 
 		<div class="desktop-menu">
@@ -105,6 +95,14 @@
 				</li>
 			</ul> -->
 			<?php } ?>
+		</div>
+
+		<div class="cart">
+			<?php global $woocommerce; ?>
+			<a href="<?php echo wc_get_cart_url(); ?>">
+				<span class="count"><?php echo sprintf(_n('%d', '%d', $woocommerce->cart->cart_contents_count, 'woothemes'),
+				$woocommerce->cart->cart_contents_count);?></span>
+			</a>
 		</div>
 
 	</div>
