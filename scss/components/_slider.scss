@@ -68,7 +68,7 @@
 			}
 
 			&:hover {
-				animation: rotate 0.5s 1;
+				animation: $preferred-animation 0.5s 1;
 				background: $cl-secondary;
 			}
 		}

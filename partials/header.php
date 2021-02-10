@@ -42,7 +42,7 @@
 	$youtube = get_field('options_social_youtube', 'options');
 	?>
 
-<section id="header" class="header full-width <?php echo $pageType; ?> <?php echo $class; ?>">
+<section id="header" class="header full-width <?php echo $pageType; ?> <?php echo $class; ?>" button-style="<?= get_field('button_style', 'option'); ?>">
 
 
 	<div class="wrapper">
@@ -64,7 +64,11 @@
 				$image = get_field('options_logo', 'option');
 			?>
 			<a class="logo__image" href="<?php echo home_url(); ?>">
-				<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>">
+				<?php if ($image) { ?>
+					<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>">
+				<?php } else { ?>
+					<span class="textual-logo"><?= get_field('options_company', 'option'); ?></span>
+				<?php } ?>
 				<!-- <span>Webshop</span> -->
 			</a>
 		</div>
@@ -100,6 +104,7 @@
 		<div class="cart">
 			<?php global $woocommerce; ?>
 			<a href="<?php echo wc_get_cart_url(); ?>">
+				<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
 				<span class="count"><?php echo sprintf(_n('%d', '%d', $woocommerce->cart->cart_contents_count, 'woothemes'),
 				$woocommerce->cart->cart_contents_count);?></span>
 			</a>

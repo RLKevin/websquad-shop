@@ -15,7 +15,7 @@ function render_block_usp() {
 
 	?>
 
-	<div id="<?php echo $id; ?>" class="usp usp--<?php echo $align; ?> usp--<?php echo $background; ?>">
+	<div id="<?php echo $id; ?>" class="usp usp--<?php echo $background; ?>">
 
 		<?php
 

@@ -125,7 +125,7 @@
 	
 							&:before {
 								border: 2px solid $cl-secondary;
-								animation: rotate 0.5s 1;
+								animation: $preferred-animation 0.5s 1;
 								cursor: pointer;
 							}
 	
@@ -277,7 +277,7 @@
 	
 							&:before {
 								border: 2px solid $cl-primary;
-								animation: rotate 0.5s 1;
+								animation: $preferred-animation 0.5s 1;
 								cursor: pointer;
 							}
 	

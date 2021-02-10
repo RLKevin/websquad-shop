@@ -22,6 +22,15 @@ jQuery(document).ready(function ($) {
 
 	// functions
 
+	// add button style to all buttons
+
+	var buttonStyle = document.querySelector('section.header').getAttribute("button-style");
+
+	var buttons = document.querySelectorAll('.button');
+	buttons.forEach(button => {
+		button.classList.add(buttonStyle);
+	});
+
 	// disable autofill on certain form inputs
 
 	$(document).on(
@@ -209,6 +218,7 @@ jQuery(document).ready(function ($) {
 			pullDrag: false,
 			margin: 0,
 		});
+
 		$(".product__slider").owlCarousel({
 			responsive: {
 				0: {
@@ -240,6 +250,54 @@ jQuery(document).ready(function ($) {
 			touchDrag: true,
 			pullDrag: false,
 		});
+
+		$('.usp__slider').owlCarousel({
+			responsive: {
+				0: {
+					items: 1,
+					autoWidth: false,
+					autoHeight: false,
+					margin: 0,
+				},
+				640: {
+					items: 2,
+				},
+				1280: {
+					autoWidth: true,
+					autoHeight: true,
+					margin: 96,
+				},
+				1920: {
+					autoWidth: true,
+					autoHeight: true,
+					margin: 192,
+				},
+			},
+			smartSpeed: 500,
+			center: true,
+			loop: true,
+			autoplay: true,
+			autoplayTimeout: 2500,
+			autoplayHoverPause: true,
+			nav: false,
+			dots: false,
+			autoHeight: true,
+			mouseDrag: false,
+			touchDrag: false,
+			pullDrag: false,
+			navText: [
+				'',
+				''
+			],
+			onInitialize : function(element){
+				$('.slider--usp').children().sort(function(){
+					return Math.round(Math.random()) - 0.5;
+				}).each(function(){
+					$(this).appendTo($('.slider--usp'));
+				});
+			},
+		});
+		
 		$(".info__slider").owlCarousel({
 			responsive: {
 				0: {

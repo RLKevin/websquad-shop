@@ -1,11 +1,19 @@
 
 $cl-primary: #00564b;
+$cl-primary-text: #ffffff;
 $cl-secondary: #2eba99;
+$cl-secondary-text: #212121;
 
 $shape_top_left: 2px;
 $shape_top_right: 2px;
 $shape_bottom_left: 2px;
 $shape_bottom_right: 2px;
 
-$ff-primary: "Roboto", Roboto, sans-serif;
-$ff-secondary: "Montserrat", Roboto Slab, serif;
+$ff-primary: "Lato", Roboto, sans-serif;
+$ff-secondary: "Lexia", Roboto Slab, serif;
+
+$preferred-animation: pulse;
+
+$cl-background: #ffffff;
+$cl-text: #212121;
+$cl-grey: #efefef;

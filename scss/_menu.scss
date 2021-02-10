@@ -27,7 +27,7 @@ div.hamburger {
 
 	span {
 		display: block;
-		background-color: $cl-black;
+		background-color: $cl-text;
 		width: 40px;
 		height: 2px;
 		transition: all 150ms 150ms ease;
@@ -85,7 +85,7 @@ section.menu {
 	min-width: 280px;
 	width: 400px;
 	max-width: 100%;
-	background-color: $cl-white;
+	background-color: $cl-background;
 	z-index: 998;
 	transition: right 150ms ease-out;
 	@include auto-padding;
@@ -103,7 +103,7 @@ section.menu {
 			margin: 0;
 			li a {
 				display: block;
-				color: $cl-black;
+				color: $cl-text;
 				text-align: center;
 				width: 100%;
 				text-transform: uppercase;

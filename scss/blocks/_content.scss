@@ -78,7 +78,7 @@
 				background-position: center left;
 
 				&::after {
-					animation: rotate 0.5s 1;
+					animation: $preferred-animation 0.5s 1;
 				}
 			}
 		}
@@ -271,7 +271,7 @@
 				}
 
 				&:after {
-					animation: pulse 0.5s 1;
+					animation: $preferred-animation 0.5s 1;
 					background-color: darken($cl-secondary, 10%);
 				}
 			}
@@ -359,7 +359,7 @@
 				}
 
 				&:after {
-					animation: pulse 0.5s 1;
+					animation: $preferred-animation 0.5s 1;
 					background-color: darken($cl-secondary, 10%);
 				}
 			}
