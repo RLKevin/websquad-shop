@@ -370,6 +370,10 @@ h2 {
 	@include tablet {
 		font-size: $fs-large;
 	}
+
+	&.woocommerce-loop-product__title {
+		padding: 0 0 16px 0;
+	}
 }
 
 h3 {

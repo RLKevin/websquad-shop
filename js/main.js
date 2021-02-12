@@ -26,7 +26,7 @@ jQuery(document).ready(function ($) {
 
 	var buttonStyle = document.querySelector('section.header').getAttribute("button-style");
 
-	var buttons = document.querySelectorAll('.button');
+	var buttons = document.querySelectorAll('.button, .wp-block-button__link');
 	buttons.forEach(button => {
 		button.classList.add(buttonStyle);
 	});

@@ -15,7 +15,12 @@ div.site-content > .col-full {
 // breadcrubs
 
 div.storefront-breadcrumb {
-	margin-bottom: 20px;
+	margin-bottom: 0;
+	// display: none;
+}
+
+main {
+	margin-top: 20px;
 }
 
 // do not display breadcrumbs on custom page
@@ -41,7 +46,7 @@ div.storefront-sorting {
 			height: 1em;
 			width: 1em;
 			left: 1em;
-			background-image: url("img/icons/sort.svg");
+			background-image: url("../img/icons/sort.svg");
 			background-size: contain;
 			background-position: center;
 			background-repeat: no-repeat;

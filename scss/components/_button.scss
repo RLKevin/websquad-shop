@@ -1,4 +1,5 @@
-a.button:not(.owl-prev):not(.owl-next) {
+a.button:not(.owl-prev):not(.owl-next),
+.wp-block-button__link {
 	display: inline-block;
 	position: relative;
 	width: auto;
@@ -63,7 +64,7 @@ a.button:not(.owl-prev):not(.owl-next) {
 	// woocommerce buttons
 	&.add_to_cart_button,
 	&.product_type_grouped {
-		padding: 4px 8px;
+		padding: 4px 12px;
 		min-width: 0;
 	}
 
