@@ -14,7 +14,11 @@ Een child thema voor het Storefront thema voor Woocommerce, gemaakt door Switch 
 - [ ] Exporteren ACF velden zodat deze geïmporteerd kunnen worden bij de installatie
 - [ ] Variabelen ophalen uit ACF en inladen in de stylesheet
   - [x] Variabelen
-  - [ ] Fonts
+  - [x] Google Fonts
+  - [ ] Adobe Fonts
+  - [ ] Font size base value
+  - [ ] Letter spacing
+  - [ ] Font weight voor light, regular en bold kiezen uit (100, 200, 300, etc.)
 - [ ] Websquad blokken een preview afbeelding geven
 - [ ] Options pagina opschonen
-- [ ] Dynamisch shoppingcart icoon in header
+- [x] Dynamisch shoppingcart icoon in header
