@@ -4445,7 +4445,7 @@ div.woocommerce-message[role="alert"] {
 }
 .header .wrapper .logo {
   position: relative;
-  height: 80px;
+  height: calc(100% - 40px);
   width: auto;
   padding: 0 0;
   display: flex;
