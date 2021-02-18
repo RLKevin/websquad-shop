@@ -2,6 +2,21 @@
 
     include 'woo.php';
 
+    add_action( 'acf/save_post', 'generate_options_css', 20 ); //Parse the output and write the CSS file on post save
+    add_action('after_setup_theme', 'PREFIX_check_theme_version');
+    function PREFIX_check_theme_version() {
+
+    $current_version = wp_get_theme()->get('Version');
+    $old_version = get_option( 'PREFIX_theme_version' );
+
+    if ($old_version !== $current_version) {
+        // do some cool stuff
+        generate_options_css();
+
+        // update not to run twice
+        update_option('PREFIX_theme_version', $current_version);
+    }
+    }
     function generate_options_css() {
         $ss_dir = get_stylesheet_directory();
         ob_start(); // Capture all output into buffer
@@ -9,7 +24,6 @@
         $css = ob_get_clean(); // Store output in a variable, then flush the buffer
         file_put_contents($ss_dir . '/scss/_custom.scss', $css, LOCK_EX); // Save it as a css file
     }
-    add_action( 'acf/save_post', 'generate_options_css', 20 ); //Parse the output and write the CSS file on post save
 
 /**
  * Storefront automatically loads the core CSS even if using a child theme as it is more efficient
