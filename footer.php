@@ -23,4 +23,10 @@
 <?php wp_footer(); ?>
 
 </body>
+
+<div class="switchcookie disabled">
+	<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus, ipsam!</p>
+	<a class="button" id="switchcookiebutton">ok</a>
+</div>
+
 </html>

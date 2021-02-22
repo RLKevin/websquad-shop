@@ -299,7 +299,6 @@ $fw-bold: 900;
 // elements
 
 @import "components/button.scss";
-@import "components/cookie.scss";
 @import "components/form.scss";
 @import "components/slider.scss";
 
@@ -585,3 +584,5 @@ input:-webkit-autofill:active {
 @import "blocks/spacer";
 @import "blocks/table";
 @import "blocks/usp";
+
+@import "components/switchcookie";

@@ -1,4 +1,41 @@
 jQuery(document).ready(function ($) {
+	// cookie
+
+	const cookie = document.querySelector(".switchcookie");
+	const cookiebutton = document.querySelector("#switchcookiebutton");
+	if (!getCookie("cookies-ok")) {
+		cookie.classList.remove("disabled");
+	}
+	cookiebutton.addEventListener("click", () => {
+		setCookie("cookies-ok", true, 30);
+		cookie.classList.add("disabled");
+	});
+
+	function setCookie(name, value, days) {
+		var expires = "";
+		if (days) {
+			var date = new Date();
+			date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+			expires = "; expires=" + date.toUTCString();
+		}
+		document.cookie = name + "=" + (value || "") + expires + "; path=/";
+	}
+	function getCookie(name) {
+		var nameEQ = name + "=";
+		var ca = document.cookie.split(";");
+		for (var i = 0; i < ca.length; i++) {
+			var c = ca[i];
+			while (c.charAt(0) == " ") c = c.substring(1, c.length);
+			if (c.indexOf(nameEQ) == 0)
+				return c.substring(nameEQ.length, c.length);
+		}
+		return null;
+	}
+	function eraseCookie(name) {
+		document.cookie =
+			name + "=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+	}
+
 	// variables
 
 	var dotDotDotSettings = {
@@ -24,10 +61,12 @@ jQuery(document).ready(function ($) {
 
 	// add button style to all buttons
 
-	var buttonStyle = document.querySelector('section.header').getAttribute("button-style");
+	var buttonStyle = document
+		.querySelector("section.header")
+		.getAttribute("button-style");
 
-	var buttons = document.querySelectorAll('.button, .wp-block-button__link');
-	buttons.forEach(button => {
+	var buttons = document.querySelectorAll(".button, .wp-block-button__link");
+	buttons.forEach((button) => {
 		button.classList.add(buttonStyle);
 	});
 
@@ -251,7 +290,7 @@ jQuery(document).ready(function ($) {
 			pullDrag: false,
 		});
 
-		$('.usp__slider').owlCarousel({
+		$(".usp__slider").owlCarousel({
 			responsive: {
 				0: {
 					items: 1,
@@ -285,19 +324,19 @@ jQuery(document).ready(function ($) {
 			mouseDrag: false,
 			touchDrag: false,
 			pullDrag: false,
-			navText: [
-				'',
-				''
-			],
-			onInitialize : function(element){
-				$('.slider--usp').children().sort(function(){
-					return Math.round(Math.random()) - 0.5;
-				}).each(function(){
-					$(this).appendTo($('.slider--usp'));
-				});
+			navText: ["", ""],
+			onInitialize: function (element) {
+				$(".slider--usp")
+					.children()
+					.sort(function () {
+						return Math.round(Math.random()) - 0.5;
+					})
+					.each(function () {
+						$(this).appendTo($(".slider--usp"));
+					});
 			},
 		});
-		
+
 		$(".info__slider").owlCarousel({
 			responsive: {
 				0: {
@@ -354,7 +393,7 @@ jQuery(document).ready(function ($) {
 				maxHeight = slide.clientHeight;
 			}
 		}
-		
+
 		// set height
 		for (let index = 0; index < slides.length; index++) {
 			const slide = slides[index];

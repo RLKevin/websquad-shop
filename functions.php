@@ -3,19 +3,19 @@
     include 'woo.php';
 
     add_action( 'acf/save_post', 'generate_options_css', 20 ); //Parse the output and write the CSS file on post save
-    add_action('after_setup_theme', 'PREFIX_check_theme_version');
+    add_action( 'after_setup_theme', 'PREFIX_check_theme_version' );
     function PREFIX_check_theme_version() {
 
-    $current_version = wp_get_theme()->get('Version');
-    $old_version = get_option( 'PREFIX_theme_version' );
+        $current_version = wp_get_theme()->get('Version');
+        $old_version = get_option( 'PREFIX_theme_version' );
 
-    if ($old_version !== $current_version) {
-        // do some cool stuff
-        generate_options_css();
+        if ($old_version !== $current_version) {
+            // do some cool stuff
+            generate_options_css();
 
-        // update not to run twice
-        update_option('PREFIX_theme_version', $current_version);
-    }
+            // update not to run twice
+            update_option('PREFIX_theme_version', $current_version);
+        }
     }
     function generate_options_css() {
         $ss_dir = get_stylesheet_directory();
