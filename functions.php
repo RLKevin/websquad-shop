@@ -6,12 +6,12 @@
     add_action( 'after_setup_theme', 'PREFIX_check_theme_version' );
     function PREFIX_check_theme_version() {
 
+        generate_options_css();
         $current_version = wp_get_theme()->get('Version');
         $old_version = get_option( 'PREFIX_theme_version' );
 
         if ($old_version !== $current_version) {
             // do some cool stuff
-            generate_options_css();
 
             // update not to run twice
             update_option('PREFIX_theme_version', $current_version);
